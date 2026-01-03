@@ -35,7 +35,7 @@ body{
     url("./assets/background.jpg");
   background-size: cover;
   background-position: center;
-  filter: saturate(1.05);
+  filter: saturate(1.18) contrast(1.05);
   transform: scale(1.02);
 }
 
@@ -436,4 +436,5 @@ body{
   .grid{ grid-template-columns: 1fr; }
   .shot img{ height: 220px; }
 }
+
 
