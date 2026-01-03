@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Light & Shadow (Working Title) — Mobile idle RPG. Gameplay, screenshots and project status." />
+  <title>Light & Shadow (Working Title)</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <!-- Background -->
+  <div class="bg" aria-hidden="true"></div>
+
+  <main class="wrap">
+    <!-- Top HUD -->
+    <header class="hud">
+      <div class="hud__left">
+        <div class="chip chip--status">
+          <span class="dot"></span>
+          In Development (WIP Build)
+        </div>
+      </div>
+
+      <div class="hud__right">
+        <a class="chip chip--link" href="#gameplay">Gameplay</a>
+        <a class="chip chip--link" href="#screens">Screens</a>
+        <a class="chip chip--link" href="#features">Features</a>
+        <a class="chip chip--link" href="#status">Status</a>
+        <a class="chip chip--link" href="#contact">Contact</a>
+      </div>
+    </header>
+
+    <!-- HERO CARD -->
+    <section class="card hero">
+      <div class="hero__grid">
+        <div class="hero__brand">
+          <!-- Optional logo: uncomment if you add assets/logo.png -->
+          <!-- <img class="logo" src="./assets/logo.png" alt="Light & Shadow logo" /> -->
+
+          <h1 class="title">Light &amp; Shadow <span class="muted">(Working Title)</span></h1>
+          <p class="subtitle">Mobile Idle RPG (Android / iOS)</p>
+
+          <div class="stats">
+            <div class="stat">
+              <div class="stat__label">Core Loop</div>
+              <div class="stat__value">Hunt → Rewards → Upgrade → PvP</div>
+            </div>
+            <div class="stat">
+              <div class="stat__label">Mode</div>
+              <div class="stat__value">Asynchronous PvE + Competitive PvP</div>
+            </div>
+            <div class="stat">
+              <div class="stat__label">Backend</div>
+              <div class="stat__value">PlayFab (CloudScript)</div>
+            </div>
+          </div>
+
+          <div class="ctaRow">
+            <a class="btn" href="#gameplay">View Gameplay</a>
+            <a class="btn btn--ghost" href="#screens">View Screenshots</a>
+          </div>
+
+          <p class="micro">
+            Early development presentation. Visual polish and content expansion are planned during the grant period.
+          </p>
+        </div>
+
+        <div class="hero__panel">
+          <div class="panelHeader">
+            <div class="panelTitle">Project Snapshot</div>
+            <div class="panelBadge">Game UI Layout</div>
+          </div>
+
+          <div class="panelBody">
+            <div class="kv">
+              <div class="kv__k">Genre</div><div class="kv__v">Idle / RPG</div>
+              <div class="kv__k">Engine</div><div class="kv__v">Godot 4.5</div>
+              <div class="kv__k">Platforms</div><div class="kv__v">Android, iOS</div>
+              <div class="kv__k">State</div><div class="kv__v">Functional build, ready for beta/soft-launch testing</div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="callout">
+              <div class="callout__title">What makes it compelling</div>
+              <ul class="list">
+                <li>Long-term progression with repeatable daily systems</li>
+                <li>PvP rating + leaderboards with server/world scalability</li>
+                <li>Guild progression features and social systems</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GAMEPLAY -->
+    <section id="gameplay" class="card section">
+      <div class="sectionHeader">
+        <h2 class="h2">Gameplay <span class="muted">(Work in Progress)</span></h2>
+        <div class="tag">Recommended: mobile-recorded build</div>
+      </div>
+
+      <!-- Replace the iframe src with your YouTube embed link -->
+      <div class="videoFrame">
+        <iframe
+          title="Gameplay video"
+          src="https://www.youtube.com/embed/VIDEO_ID_HERE"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <p class="micro">
+        Replace <span class="mono">VIDEO_ID_HERE</span> with your YouTube video ID (set video to <b>Unlisted</b> if you prefer).
+      </p>
+    </section>
+
+    <!-- SCREENSHOTS -->
+    <section id="screens" class="card section">
+      <div class="sectionHeader">
+        <h2 class="h2">Screenshots</h2>
+        <div class="tag">WIP build</div>
+      </div>
+
+      <div class="grid">
+        <figure class="shot">
+          <img src="./assets/screen1.jpg" alt="Screenshot 1" />
+          <figcaption>Main / Hub</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="./assets/screen2.jpg" alt="Screenshot 2" />
+          <figcaption>PvE / Hunt</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="./assets/screen3.jpg" alt="Screenshot 3" />
+          <figcaption>Combat</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="./assets/screen4.jpg" alt="Screenshot 4" />
+          <figcaption>PvP Arena</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="./assets/screen5.jpg" alt="Screenshot 5" />
+          <figcaption>Equipment / Upgrades</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="./assets/screen6.jpg" alt="Screenshot 6" />
+          <figcaption>Guild / Rankings</figcaption>
+        </figure>
+      </div>
+
+      <p class="micro">
+        Tip: keep screenshots as portrait (mobile) for best presentation. JPG or PNG both work.
+      </p>
+    </section>
+
+    <!-- ABOUT + FEATURES -->
+    <section id="features" class="card section">
+      <div class="sectionHeader">
+        <h2 class="h2">About the Game</h2>
+        <div class="tag">Grant-ready overview</div>
+      </div>
+
+      <div class="twoCol">
+        <div class="panel">
+          <div class="panelHeader">
+            <div class="panelTitle">Summary</div>
+          </div>
+          <div class="panelBody">
+            <p class="p">
+              <b>Light &amp; Shadow</b> is a mobile idle RPG built for long-term progression and competitive rankings.
+              Players choose a class (Warrior, Mage or Archer), complete asynchronous PvE hunts, and improve their character
+              through equipment upgrades and materials. Competitive PvP arenas and global leaderboards provide ongoing goals,
+              while social systems such as guilds extend retention through group progression.
+            </p>
+            <p class="p">
+              The project is backend-driven (PlayFab) and designed around live systems such as daily resets, rotating content pools
+              and scalable worlds/servers. The current build is functional and ready for beta/soft-launch testing, with the next
+              development phase focused on content expansion, balancing, visual polish, onboarding improvements and release readiness.
+            </p>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panelHeader">
+            <div class="panelTitle">Key Features</div>
+          </div>
+          <div class="panelBody">
+            <ul class="list list--tight">
+              <li>Asynchronous PvE hunts with stamina loop and rotating biomes</li>
+              <li>PvP arena with rating, matchmaking and global leaderboards</li>
+              <li>Deep equipment system (8 slots) with upgrades and materials</li>
+              <li>Daily quests, login streak rewards and repeatable progression</li>
+              <li>Guild system with roles, progression buildings and social features</li>
+              <li>Live-ops ready structure: resets, rotations and scalable worlds</li>
+              <li>Backend-driven persistence and validation (PlayFab + CloudScript)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATUS / ROADMAP -->
+    <section id="status" class="card section">
+      <div class="sectionHeader">
+        <h2 class="h2">Development Status</h2>
+        <div class="tag">6-month milestone framing</div>
+      </div>
+
+      <div class="panel">
+        <div class="panelBody">
+          <div class="timeline">
+            <div class="tItem">
+              <div class="tDot"></div>
+              <div>
+                <div class="tTitle">Current</div>
+                <div class="tText">Functional build with core systems implemented (PvE, PvP, economy, social systems) and PlayFab-backed persistence.</div>
+              </div>
+            </div>
+
+            <div class="tItem">
+              <div class="tDot"></div>
+              <div>
+                <div class="tTitle">Next (during grant period)</div>
+                <div class="tText">Content expansion, balancing, improved onboarding and UX, visual polish (UI/VFX), live-ops events and soft-launch preparation.</div>
+              </div>
+            </div>
+
+            <div class="tItem">
+              <div class="tDot"></div>
+              <div>
+                <div class="tTitle">Outcome</div>
+                <div class="tText">Soft-launch ready build and first live metrics (retention, engagement and monetisation signals) to guide scaling and next-stage funding.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="micro">
+            Note: title and branding are provisional and may change during development.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="card section">
+      <div class="sectionHeader">
+        <h2 class="h2">Contact</h2>
+        <div class="tag">For grant review / partnerships</div>
+      </div>
+
+      <div class="panel">
+        <div class="panelBody">
+          <p class="p">
+            Email: <span class="mono">YOUR_EMAIL_HERE</span>
+          </p>
+          <p class="micro">
+            Replace <span class="mono">YOUR_EMAIL_HERE</span> with your preferred contact email.
+          </p>
+
+          <div class="ctaRow">
+            <a class="btn" href="#gameplay">Back to Gameplay</a>
+            <a class="btn btn--ghost" href="#screens">Back to Screens</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <div>© <span id="year"></span> Light &amp; Shadow (Working Title)</div>
+        <div class="footer__right">Built for GitHub Pages • One-page grant showcase</div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
