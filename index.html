@@ -18,386 +18,232 @@
     }
     body{ color: var(--text); }
     .wrap{ max-width: var(--maxw); margin: 0 auto; padding: 28px 18px 54px; }
+
     .hero{
       display:flex; flex-direction:column; gap:14px; align-items:center; text-align:center;
-      padding: 18px 16px; border:1px solid var(--stroke); border-radius:16px; background: var(--panel);
-      backdrop-filter: blur(6px);
+      padding:18px 16px; border:1px solid var(--stroke); border-radius:16px;
+      background:var(--panel); backdrop-filter:blur(6px);
     }
     .brand-banner{
-      width:min(880px, 100%);
-      height:auto;
-      border-radius:14px;
-      border:1px solid rgba(255,255,255,.08);
-      display:block;
+      width:min(880px,100%); height:auto; border-radius:14px;
+      border:1px solid rgba(255,255,255,.08); display:block;
     }
-    .title{ font-size: clamp(22px, 3vw, 34px); margin: 6px 0 0; letter-spacing:.2px; }
-    .subtitle{ margin: 0; color: var(--muted); line-height:1.45; max-width: 860px; }
-    .meta{ margin-top: 8px; display:flex; gap:10px; flex-wrap:wrap; justify-content:center; color: var(--muted); font-size: 14px; }
-    .pill{ border:1px solid rgba(255,255,255,.12); padding:6px 10px; border-radius:999px; background: rgba(0,0,0,.18); }
+    .title{ font-size:clamp(22px,3vw,34px); margin:6px 0 0; }
+    .subtitle{ margin:0; color:var(--muted); line-height:1.45; max-width:860px; }
+
+    .meta{ margin-top:8px; display:flex; gap:10px; flex-wrap:wrap; justify-content:center; font-size:14px; color:var(--muted); }
+    .pill{ border:1px solid rgba(255,255,255,.12); padding:6px 10px; border-radius:999px; background:rgba(0,0,0,.18); }
+
     .section{
-      margin-top: 16px; padding: 18px 16px;
-      border:1px solid var(--stroke); border-radius:16px; background: var(--panel);
-      backdrop-filter: blur(6px);
+      margin-top:16px; padding:18px 16px;
+      border:1px solid var(--stroke); border-radius:16px;
+      background:var(--panel); backdrop-filter:blur(6px);
     }
-    .section h2{ margin:0 0 10px; font-size: 18px; letter-spacing:.2px; }
-    .section p{ margin: 0 0 10px; color: var(--muted); line-height:1.55; }
-    .grid-2{ display:grid; grid-template-columns: 1fr; gap: 14px; }
-    @media (min-width: 900px){ .grid-2{ grid-template-columns: 1.15fr .85fr; } }
+    .section h2{ margin:0 0 10px; font-size:18px; }
+    .section p{ margin:0 0 10px; color:var(--muted); line-height:1.55; }
+
+    .grid-2{ display:grid; grid-template-columns:1fr; gap:14px; }
+    @media(min-width:900px){ .grid-2{ grid-template-columns:1.15fr .85fr; } }
 
     .video{
-      width:100%;
-      aspect-ratio: 16 / 9;
-      border-radius: 14px;
-      overflow:hidden;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.22);
+      width:100%; aspect-ratio:16/9; border-radius:14px;
+      overflow:hidden; border:1px solid rgba(255,255,255,.10);
+      background:rgba(0,0,0,.22);
     }
     .video iframe{ width:100%; height:100%; border:0; display:block; }
 
-    .list{ margin: 8px 0 0; padding-left: 18px; color: var(--muted); line-height: 1.55; }
-    .list li{ margin: 6px 0; }
+    .list{ margin:8px 0 0; padding-left:18px; color:var(--muted); line-height:1.55; }
+    .list li{ margin:6px 0; }
 
-    .shots{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-      margin-top: 12px;
-    }
-    @media (min-width: 780px){
-      .shots{ grid-template-columns: repeat(2, 1fr); }
-    }
+    /* Screenshots */
+    .shots{ display:grid; grid-template-columns:1fr; gap:12px; margin-top:12px; }
+    @media(min-width:780px){ .shots{ grid-template-columns:repeat(2,1fr); } }
+
     .shot{
       border:1px solid rgba(255,255,255,.10);
-      border-radius: 14px;
-      background: rgba(0,0,0,.20);
-      overflow:hidden;
-      cursor: zoom-in;
-      position: relative;
+      border-radius:14px; background:rgba(0,0,0,.20);
+      overflow:hidden; cursor:zoom-in;
     }
     .shot img{
-      width: 100%;
-      height: 320px;
-      object-fit: contain;
-      display:block;
-      background: rgba(0,0,0,.22);
+      width:100%; height:320px; object-fit:contain;
+      background:rgba(0,0,0,.22); display:block;
     }
-    .shot .cap{
-      padding: 10px 12px;
-      font-size: 13px;
-      color: var(--muted);
-      border-top: 1px solid rgba(255,255,255,.08);
+    .cap{
+      padding:10px 12px; font-size:13px; color:var(--muted);
+      border-top:1px solid rgba(255,255,255,.08);
     }
 
+    /* Modal */
     .modal{
-      position: fixed; inset: 0;
-      background: rgba(0,0,0,.72);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 18px;
-      z-index: 9999;
+      position:fixed; inset:0; background:rgba(0,0,0,.72);
+      display:none; align-items:center; justify-content:center;
+      padding:18px; z-index:9999;
     }
     .modal[aria-hidden="false"]{ display:flex; }
     .modal-card{
-      width: min(1200px, 100%);
-      max-height: 92vh;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(12,14,18,.92);
-      overflow: hidden;
-      box-shadow: 0 18px 60px rgba(0,0,0,.55);
-      display:flex;
-      flex-direction: column;
+      width:min(1200px,100%); max-height:92vh;
+      border-radius:16px; border:1px solid rgba(255,255,255,.12);
+      background:rgba(12,14,18,.92); overflow:hidden;
+      display:flex; flex-direction:column;
     }
     .modal-top{
-      display:flex; align-items:center; justify-content:space-between;
-      padding: 12px 14px;
-      border-bottom: 1px solid rgba(255,255,255,.08);
-      color: rgba(255,255,255,.80);
-      font-size: 14px;
-      gap: 10px;
+      display:flex; justify-content:space-between; align-items:center;
+      padding:12px 14px; border-bottom:1px solid rgba(255,255,255,.08);
+      font-size:14px;
     }
     .modal-btn{
-      appearance:none; border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      color: rgba(255,255,255,.90);
-      padding: 8px 10px;
-      border-radius: 10px;
-      cursor:pointer;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+      color:white; padding:8px 10px;
+      border-radius:10px; cursor:pointer;
     }
-    .modal-img-wrap{
-      padding: 12px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      overflow:auto;
-    }
-    .modal-img-wrap img{
-      max-width: 100%;
-      height: auto;
-      display:block;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(0,0,0,.2);
-    }
+    .modal-img-wrap{ padding:12px; overflow:auto; text-align:center; }
+    .modal-img-wrap img{ max-width:100%; height:auto; border-radius:12px; }
 
     .footer{
-      margin-top: 16px;
-      text-align:center;
-      color: rgba(255,255,255,.62);
-      font-size: 13px;
-      line-height: 1.5;
+      margin-top:16px; text-align:center;
+      color:rgba(255,255,255,.62); font-size:13px;
     }
-    a{ color: rgba(200,220,255,.92); text-decoration: none; }
-    a:hover{ text-decoration: underline; }
+    a{ color:rgba(200,220,255,.92); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
   </style>
 </head>
 
 <body>
-  <div class="bg" aria-hidden="true"></div>
+<div class="bg"></div>
 
-  <main class="wrap">
-    <header class="hero">
-      <img class="brand-banner" src="./assets/c36ab63e-3e02-45ae-bff8-a4c93286d173.jpg" alt="Grindare Studio banner" />
-      <h1 class="title">Light &amp; Shadow <span style="opacity:.75">(Working Title)</span></h1>
-      <p class="subtitle">
-        A mobile idle RPG in active development by <strong>Grindare Studio</strong>, built in <strong>Godot 4.5</strong> with a <strong>Microsoft PlayFab</strong> backend.
-        The project focuses on long-term progression, retention-driven systems, and competitive play.
-      </p>
-      <div class="meta">
-        <span class="pill">Platform: Android &amp; iOS</span>
-        <span class="pill">Stage: Work in Progress / Pre-Alpha</span>
-        <span class="pill">Format: Casual / Idle</span>
-      </div>
-    </header>
+<main class="wrap">
 
-    <section class="section">
-      <h2>Gameplay Video</h2>
-      <div class="grid-2">
-        <div class="video" aria-label="Gameplay video">
-          <iframe
-            src="https://www.youtube.com/embed/IPRvJKimm4Y"
-            title="Light & Shadow (Working Title) — Gameplay (WIP)"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-          </iframe>
-        </div>
-        <div>
-          <p>
-            This video demonstrates the current build’s core systems: UI flow, asynchronous PvE activities, combat resolution,
-            equipment progression, and early competitive elements.
-          </p>
-          <ul class="list">
-            <li>Core loop: choose activity → resolve combat → rewards → upgrades → repeat.</li>
-            <li>Designed for short sessions with long-term progression.</li>
-            <li>Backend-supported progression and data storage via PlayFab.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Current Build</h2>
-      <ul class="list">
-        <li>Playable mobile build with account flow and core gameplay loop implemented.</li>
-        <li>Asynchronous PvE hunts/missions with progression rewards.</li>
-        <li>Equipment progression and stat growth supporting long-term retention.</li>
-        <li>Early PvP/competitive structure and ranking-driven motivation.</li>
-        <li>Prepared foundation for live-ops style iteration (content expansion, balancing, testing).</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2>Major Systems in Development</h2>
-      <p>
-        Beyond what is currently visible in the gameplay video, several high-impact systems remain to be implemented and
-        polished to reach a beta/soft-launch quality milestone.
-      </p>
-      <ul class="list">
-        <li><strong>Guilds</strong> as a core social and progression pillar: roles, progression, upgrades, guild economy.</li>
-        <li><strong>Guild Wars</strong> with large-scale PvP (member-vs-member format inspired by classic idle RPG competitive structures).</li>
-        <li><strong>Dungeons / lochs</strong> as repeatable, multi-stage PvE content to deepen progression and retention.</li>
-        <li><strong>Premium shop &amp; monetisation</strong>: premium currency, cosmetic skins, subscriptions and a seasonal battle pass — designed to be <strong>fair and non-pay-to-win</strong>, with competitive integrity preserved through balanced progression and gameplay-based power acquisition.</li>
-        <li>Expanded content layers, balancing, QA hardening, and structured testing with external testers.</li>
-        <li>Cohesive visuals, animations and sound design to unify the product experience.</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2>6-Month Funding Plan</h2>
-      <p>
-        The 6-month grant period is designed to convert the current functional build into a stable, content-complete beta candidate,
-        with core social and competitive systems implemented and tested.
-      </p>
-      <ul class="list">
-        <li><strong>Months 1–2:</strong> Stabilisation, bug fixing, system verification, UI/UX polish, cohesive visuals &amp; animation pass, initial sound integration.</li>
-        <li><strong>Months 3–4:</strong> Guild system implementation and progression (upgrades, economy hooks, social layer), first full integration testing.</li>
-        <li><strong>Months 5–6:</strong> Dungeons/lochs implementation, guild wars initial version, premium shop initial implementation, balancing, external playtesting, performance optimisation, beta readiness.</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2>How the Funding Will Be Used</h2>
-      <ul class="list">
-        <li>Full-time development to complete missing high-impact systems (guilds, guild wars, dungeons, premium shop foundations).</li>
-        <li>Visual cohesion: consistent UI assets, animation polish, and production-ready presentation quality.</li>
-        <li>Audio integration: SFX feedback, scene ambience, and progression cues.</li>
-        <li>Structured testing: sourcing testers, running test cycles, fixing defects, and improving stability.</li>
-      </ul>
-    </section>
-
-   <section class="section">
-  <h2>Screenshots (Click to View Full)</h2>
-  <p>
-    The following screenshots present key systems and features currently implemented
-    or in active development. All images are displayed fully without cropping.
+<header class="hero">
+  <img class="brand-banner" src="./assets/c36ab63e-3e02-45ae-bff8-a4c93286d173.jpg" alt="Grindare Studio banner" />
+  <h1 class="title">Light & Shadow <span style="opacity:.7">(Working Title)</span></h1>
+  <p class="subtitle">
+    A mobile idle RPG in active development by <strong>Grindare Studio</strong>, built in <strong>Godot 4.5</strong> with a <strong>Microsoft PlayFab</strong> backend.
+    The project focuses on long-term progression, retention-driven systems, and competitive play.
   </p>
+  <div class="meta">
+    <span class="pill">Android & iOS</span>
+    <span class="pill">Work in Progress / Pre-Alpha</span>
+    <span class="pill">Casual / Idle RPG</span>
+  </div>
+</header>
 
-  <div class="shots" id="shots">
-
-    <figure class="shot" data-full="./assets/screen01.jpg" data-title="Core Gameplay">
-      <img src="./assets/screen1.jpg" alt="Core Gameplay" loading="lazy" />
-      <figcaption class="cap">Core Gameplay</figcaption>
-    </figure>
-
-    <figure class="shot" data-full="./assets/screen02.jpg" data-title="PvE Hunts">
-      <img src="./assets/screen2.jpg" alt="PvE Hunts" loading="lazy" />
-      <figcaption class="cap">PvE Hunts</figcaption>
-    </figure>
-
-    <figure class="shot" data-full="./assets/screen03.jpg" data-title="Combat Resolution">
-      <img src="./assets/screen3.jpg" alt="Combat Resolution" loading="lazy" />
-      <figcaption class="cap">Combat Resolution</figcaption>
-    </figure>
-
-    <figure class="shot" data-full="./assets/screen04.jpg" data-title="Character Progression">
-      <img src="./assets/screen4.jpg" alt="Character Progression" loading="lazy" />
-      <figcaption class="cap">Character Progression</figcaption>
-    </figure>
-
-    <figure class="shot" data-full="./assets/screen05.jpg" data-title="Equipment & Upgrades">
-      <img src="./assets/screen5.jpg" alt="Equipment & Upgrades" loading="lazy" />
-      <figcaption class="cap">Equipment & Upgrades</figcaption>
-    </figure>
-
-    <figure class="shot" data-full="./assets/screen06.jpg" data-title="PvP Arena">
-      <img src="./assets/screen6.jpg" alt="PvP Arena" loading="lazy" />
-      <figcaption class="cap">PvP Arena</figcaption>
-    </figure>
-
-    <figure class="shot" data-full="./assets/screen07.jpg" data-title="Rankings & Leaderboards">
-      <img src="./assets/screen7.jpg" alt="Rankings & Leaderboards" loading="lazy" />
-      <figcaption class="cap">Rankings & Leaderboards</figcaption>
-    </figure>
-
-    <figure class="shot" data-full="./assets/screen08.jpg" data-title="Daily Activities">
-      <img src="./assets/screen8.jpg" alt="Daily Activities" loading="lazy" />
-      <figcaption class="cap">Daily Activities</figcaption>
-    </figure>
-
-    <figure class="shot" data-full="./assets/screen09.jpg" data-title="Shop & Economy">
-      <img src="./assets/screen9.jpg" alt="Shop & Economy" loading="lazy" />
-      <figcaption class="cap">Shop & Economy</figcaption>
-    </figure>
-
-    <figure class="shot" data-full="./assets/screen10.jpg" data-title="Guild System (Planned)">
-      <img src="./assets/screen10.jpg" alt="Guild System" loading="lazy" />
-      <figcaption class="cap">Guild System (Planned)</figcaption>
-    </figure>
-
-    <figure class="shot" data-full="./assets/screen11.jpg" data-title="Guild Wars (Planned)">
-      <img src="./assets/screen11.jpg" alt="Guild Wars" loading="lazy" />
-      <figcaption class="cap">Guild Wars (Planned)</figcaption>
-    </figure>
-
-    <figure class="shot" data-full="./assets/screen12.jpg" data-title="Dungeons & Loches (Planned)">
-      <img src="./assets/screen12.jpg" alt="Dungeons" loading="lazy" />
-      <figcaption class="cap">Dungeons & Loches (Planned)</figcaption>
-    </figure>
-
-    <figure class="shot" data-full="./assets/screen13.jpg" data-title="Future Systems Overview">
-      <img src="./assets/screen13.jpg" alt="Future Systems" loading="lazy" />
-      <figcaption class="cap">Future Systems Overview</figcaption>
-    </figure>
-
+<section class="section">
+  <h2>Gameplay Video</h2>
+  <div class="grid-2">
+    <div class="video">
+      <iframe src="https://www.youtube.com/embed/IPRvJKimm4Y" allowfullscreen></iframe>
+    </div>
+    <div>
+      <p>
+        This video demonstrates the current build’s core systems: UI flow, asynchronous PvE activities, combat resolution,
+        equipment progression, and early competitive elements.
+      </p>
+      <p><strong>Key gameplay systems are visible within the first minute of the video.</strong></p>
+      <ul class="list">
+        <li>Activity selection → combat → rewards → upgrades → repeat</li>
+        <li>Designed for short sessions with long-term progression</li>
+        <li>Backend-supported progression via PlayFab</li>
+      </ul>
+    </div>
   </div>
 </section>
 
+<section class="section">
+  <h2>Current Build</h2>
+  <ul class="list">
+    <li>Playable mobile build with core gameplay loop implemented</li>
+    <li>Asynchronous PvE hunts and missions</li>
+    <li>Equipment progression and stat growth</li>
+    <li>Early PvP and ranking systems</li>
+    <li>Foundation prepared for live-ops iteration</li>
+  </ul>
+</section>
 
-    <section class="section">
-      <h2>Contact</h2>
-      <p>
-        For project, grant, or testing enquiries:
-        <a href="mailto:patrykmajecki30@gmail.com">patrykmajecki30@gmail.com</a>
-      </p>
-    </section>
+<section class="section">
+  <h2>Major Systems in Development</h2>
+  <ul class="list">
+    <li><strong>Guilds</strong> – social progression, upgrades, roles, economy</li>
+    <li><strong>Guild Wars</strong> – large-scale PvP (member vs member)</li>
+    <li><strong>Dungeons / lochs</strong> – repeatable multi-stage PvE content</li>
+    <li><strong>Premium shop & monetisation</strong> – premium currency, cosmetics, subscriptions and seasonal battle pass,
+      designed to be <strong>fair and non-pay-to-win</strong></li>
+    <li>Balancing, QA hardening and structured external testing</li>
+    <li>Consistent visuals, animations and sound design</li>
+  </ul>
+</section>
 
-    <div class="footer">
-      © <span id="year"></span> Grindare Studio. All rights reserved.
+<section class="section">
+  <h2>6-Month Funding Plan</h2>
+  <ul class="list">
+    <li><strong>Months 1–2:</strong> Stabilisation, bug fixing, UI/UX polish, visuals & sound integration</li>
+    <li><strong>Months 3–4:</strong> Guild systems and progression, integration testing</li>
+    <li><strong>Months 5–6:</strong> Dungeons, guild wars, premium shop foundations, balancing, external testing</li>
+  </ul>
+  <p><strong>By the end of the funding period, the project is expected to reach a closed beta or soft-launch ready state.</strong></p>
+</section>
+
+<section class="section">
+  <h2>How the Funding Will Be Used</h2>
+  <ul class="list">
+    <li>Full-time development to complete core systems</li>
+    <li>Visual, animation and audio polish</li>
+    <li>Testing, balancing and performance optimisation</li>
+  </ul>
+  <p><strong>Funding will directly enable completion of core multiplayer, progression and monetisation foundations required for beta readiness.</strong></p>
+</section>
+
+<section class="section">
+  <h2>Screenshots (Click to View Full)</h2>
+  <div class="shots" id="shots">
+    <figure class="shot" data-full="./assets/screen1.jpg"><img src="./assets/screen1.jpg"><figcaption class="cap">Core Gameplay</figcaption></figure>
+    <figure class="shot" data-full="./assets/screen2.jpg"><img src="./assets/screen2.jpg"><figcaption class="cap">PvE Hunts</figcaption></figure>
+    <figure class="shot" data-full="./assets/screen3.jpg"><img src="./assets/screen3.jpg"><figcaption class="cap">Combat</figcaption></figure>
+    <figure class="shot" data-full="./assets/screen4.jpg"><img src="./assets/screen4.jpg"><figcaption class="cap">Progression</figcaption></figure>
+    <figure class="shot" data-full="./assets/screen5.jpg"><img src="./assets/screen5.jpg"><figcaption class="cap">Equipment</figcaption></figure>
+    <figure class="shot" data-full="./assets/screen6.jpg"><img src="./assets/screen6.jpg"><figcaption class="cap">PvP Arena</figcaption></figure>
+    <figure class="shot" data-full="./assets/screen7.jpg"><img src="./assets/screen7.jpg"><figcaption class="cap">Rankings</figcaption></figure>
+    <figure class="shot" data-full="./assets/screen8.jpg"><img src="./assets/screen8.jpg"><figcaption class="cap">Daily Activities</figcaption></figure>
+    <figure class="shot" data-full="./assets/screen9.jpg"><img src="./assets/screen9.jpg"><figcaption class="cap">Shop & Economy</figcaption></figure>
+    <figure class="shot" data-full="./assets/screen10.jpg"><img src="./assets/screen10.jpg"><figcaption class="cap">Guilds (Planned)</figcaption></figure>
+    <figure class="shot" data-full="./assets/screen11.jpg"><img src="./assets/screen11.jpg"><figcaption class="cap">Guild Wars (Planned)</figcaption></figure>
+    <figure class="shot" data-full="./assets/screen12.jpg"><img src="./assets/screen12.jpg"><figcaption class="cap">Dungeons (Planned)</figcaption></figure>
+    <figure class="shot" data-full="./assets/screen13.jpg"><img src="./assets/screen13.jpg"><figcaption class="cap">Future Systems</figcaption></figure>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Contact</h2>
+  <p><a href="mailto:patrykmajecki30@gmail.com">patrykmajecki30@gmail.com</a></p>
+</section>
+
+<div class="footer">© <span id="year"></span> Grindare Studio</div>
+</main>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-card">
+    <div class="modal-top">
+      <span id="modalTitle"></span>
+      <button class="modal-btn" id="closeModal">Close</button>
     </div>
-  </main>
-
-  <div class="modal" id="modal" aria-hidden="true" role="dialog" aria-label="Screenshot viewer">
-    <div class="modal-card">
-      <div class="modal-top">
-        <div id="modalTitle">Screenshot</div>
-        <div style="display:flex; gap:10px; align-items:center;">
-          <a id="openOriginal" class="modal-btn" href="#" target="_blank" rel="noopener">Open original</a>
-          <button class="modal-btn" id="closeModal" type="button">Close</button>
-        </div>
-      </div>
-      <div class="modal-img-wrap">
-        <img id="modalImg" src="" alt="Full screenshot" />
-      </div>
+    <div class="modal-img-wrap">
+      <img id="modalImg">
     </div>
   </div>
+</div>
 
-  <script>
-    (function(){
-      const yearEl = document.getElementById('year');
-      if (yearEl) yearEl.textContent = new Date().getFullYear();
+<script>
+const year=document.getElementById("year");year.textContent=new Date().getFullYear();
+const modal=document.getElementById("modal");
+const modalImg=document.getElementById("modalImg");
+const modalTitle=document.getElementById("modalTitle");
+document.getElementById("shots").addEventListener("click",e=>{
+  const f=e.target.closest(".shot");if(!f)return;
+  modalImg.src=f.dataset.full;modalTitle.textContent=f.querySelector(".cap").textContent;
+  modal.setAttribute("aria-hidden","false");document.body.style.overflow="hidden";
+});
+document.getElementById("closeModal").onclick=()=>{modal.setAttribute("aria-hidden","true");document.body.style.overflow="";}
+</script>
 
-      const modal = document.getElementById('modal');
-      const modalImg = document.getElementById('modalImg');
-      const modalTitle = document.getElementById('modalTitle');
-      const closeBtn = document.getElementById('closeModal');
-      const openOriginal = document.getElementById('openOriginal');
-      const shots = document.getElementById('shots');
-
-      function openModal(src, title){
-        modalImg.src = src;
-        modalTitle.textContent = title || 'Screenshot';
-        openOriginal.href = src;
-        modal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeModal(){
-        modal.setAttribute('aria-hidden', 'true');
-        modalImg.src = '';
-        openOriginal.href = '#';
-        document.body.style.overflow = '';
-      }
-
-      if (shots){
-        shots.addEventListener('click', (e) => {
-          const card = e.target.closest('.shot');
-          if (!card) return;
-          const full = card.getAttribute('data-full');
-          const title = card.getAttribute('data-title') || 'Screenshot';
-          if (full) openModal(full, title);
-        });
-      }
-
-      closeBtn.addEventListener('click', closeModal);
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
-      });
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal();
-      });
-    })();
-  </script>
 </body>
 </html>
-
