@@ -533,8 +533,9 @@
     /* Video section */
     .video-grid {
       display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      gap: 24px;
+      grid-template-columns: auto 1fr;
+      gap: 32px;
+      align-items: start;
     }
 
     .video-wrap {
@@ -542,11 +543,12 @@
       overflow: hidden;
       border: 1px solid var(--border);
       background: rgba(0, 0, 0, 0.3);
+      max-width: 350px;
     }
 
     .video-wrap iframe {
       width: 100%;
-      aspect-ratio: 16/9;
+      aspect-ratio: 9/16;
       display: block;
       border: 0;
     }
@@ -838,8 +840,16 @@
     @media (max-width: 1024px) {
       .about-grid,
       .funding-grid,
-      .video-grid,
       .vision-grid { grid-template-columns: 1fr; }
+
+      .video-grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+      }
+
+      .video-wrap {
+        max-width: 300px;
+      }
 
       .roadmap-grid { grid-template-columns: 1fr; }
       .screenshots-grid { grid-template-columns: repeat(2, 1fr); }
@@ -914,32 +924,32 @@
           <img src="./assets/founder_avatar.jpg" alt="Patryk Majecki" class="founder-avatar">
           <div class="founder-info">
             <h3>Patryk Majecki</h3>
-            <p class="founder-role">Founder & Lead Developer</p>
+            <p class="founder-role">Founder & Solo Developer</p>
             <p class="founder-bio">
-              I'm building Light & Shadow as a solo developer, handling everything from game design and backend architecture to UI implementation. My goal is to create a mobile RPG that respects players' time and skill.
+              I'm a passionate game developer building Light & Shadow <strong>entirely in my spare time</strong> while working a full-time job. Every line of code, every system, every placeholder graphic — it's all me. I believe in this project enough to dedicate every free hour to it.
             </p>
             <p class="founder-bio" style="margin-top: 12px;">
-              While I can build complex systems and mechanics, professional art, animation, and sound design are where I'm seeking collaboration to bring the game to its full potential.
+              <strong>What I've built alone:</strong> Complete game architecture, PlayFab backend integration, all core gameplay systems, UI/UX design, and a fully playable prototype. The foundation is solid — now it needs professional polish.
             </p>
           </div>
           <div class="skills-grid">
             <div class="skill-item"><span>💻</span> Game Programming</div>
             <div class="skill-item"><span>🎮</span> Game Design</div>
-            <div class="skill-item"><span>📱</span> Mobile Development</div>
-            <div class="skill-item"><span>☁️</span> Backend Systems</div>
+            <div class="skill-item"><span>📱</span> Mobile (Godot 4.5)</div>
+            <div class="skill-item"><span>☁️</span> Backend (PlayFab)</div>
           </div>
         </div>
 
         <div class="card mission-card">
           <h3 style="font-size: 20px; margin-bottom: 16px;">Why I'm Building This</h3>
           <p>
-            I've played mobile RPGs that punish you for having a life outside the game, and others that let whales dominate. I wanted something in between.
+            I've played mobile RPGs that punish you for having a life outside the game, and others that let whales dominate. I wanted something in between — <strong>a game that respects your time and rewards skill, not spending</strong>.
           </p>
           <p>
-            Light & Shadow is built for <strong>both grinders and casual players</strong>. Daily energy limits mean you can play efficiently in 30 minutes, but there's always more to do if you want to dive deeper. No one gets left behind.
+            Light & Shadow is built for <strong>both dedicated grinders and casual players</strong>. Daily energy limits keep things fair, while deep progression systems reward those who engage more. No one gets left behind, and no one needs to spend money to compete.
           </p>
-          <p>
-            Equipment, levels, and skill matter most. Guilds add social depth and exclusive content. Spending money gets you cosmetics and convenience — never power. That's the balance I'm creating.
+          <p style="margin-top: 16px; padding: 14px; background: rgba(255, 215, 120, 0.1); border: 1px solid rgba(255, 215, 120, 0.25); border-radius: 10px;">
+            <strong style="color: var(--accent-warm);">My Goal:</strong> Transition to full-time development and build a small team of specialists (artists, animators, sound designers, QA) to transform this working prototype into a polished, market-ready game.
           </p>
         </div>
       </div>
@@ -1351,22 +1361,51 @@
   <section id="funding">
     <div class="container">
       <div class="section-header">
-        <p class="section-label">Investment Opportunity</p>
-        <h2 class="section-title">How Funding Will Be Used</h2>
+        <p class="section-label">Funding Request</p>
+        <h2 class="section-title">From Spare Time to Full Time</h2>
         <p class="section-desc">
-          The core systems are built. Funding will bring in specialists to transform a working prototype into a polished, market-ready product.
+          I've built a working prototype alone, in my spare time. With funding, I can go full-time and hire the specialists needed to make this game market-ready.
         </p>
+      </div>
+
+      <!-- Current Situation -->
+      <div class="card" style="margin-bottom: 24px; border-color: rgba(140, 195, 255, 0.25); background: linear-gradient(135deg, rgba(140, 195, 255, 0.08), transparent);">
+        <h3 style="font-size: 18px; margin-bottom: 16px; color: var(--accent-cool);">📍 Current Situation</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px;">
+          <div>
+            <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7; margin: 0;">
+              <strong style="color: var(--text);">Development:</strong> Evenings and weekends only, while working full-time job<br>
+              <strong style="color: var(--text);">Team size:</strong> Just me — solo developer<br>
+              <strong style="color: var(--text);">Time invested:</strong> 12+ months of dedicated spare time
+            </p>
+          </div>
+          <div>
+            <p style="color: var(--text-muted); font-size: 14px; line-height: 1.7; margin: 0;">
+              <strong style="color: var(--text);">What exists:</strong> Fully playable prototype with core systems<br>
+              <strong style="color: var(--text);">What's missing:</strong> Professional art, animation, sound, QA<br>
+              <strong style="color: var(--text);">Bottleneck:</strong> Time and specialized skills I don't have
+            </p>
+          </div>
+        </div>
       </div>
 
       <div class="funding-grid">
         <div class="card">
-          <h3 style="font-size: 18px; margin-bottom: 22px;">Key Investment Areas</h3>
+          <h3 style="font-size: 18px; margin-bottom: 22px;">What Funding Enables</h3>
 
-          <div class="funding-need">
+          <div class="funding-need" style="border-color: rgba(255, 215, 120, 0.25); background: rgba(255, 215, 120, 0.08);">
+            <div class="need-icon" style="background: rgba(255, 215, 120, 0.2); border-color: rgba(255, 215, 120, 0.3);">👨‍💻</div>
+            <div class="need-content">
+              <h4>Full-Time Development</h4>
+              <p>Transition from spare-time hobby to full-time focus. 5x more development hours per week.</p>
+            </div>
+          </div>
+
+          <div class="funding-need" style="margin-top: 14px;">
             <div class="need-icon">🎨</div>
             <div class="need-content">
-              <h4>Visual Artists</h4>
-              <p>Character art, environments, UI elements, and icons to create a distinctive visual identity.</p>
+              <h4>Professional Artists</h4>
+              <p>Hire character artists, environment artists, and UI designers to replace placeholder graphics.</p>
             </div>
           </div>
 
@@ -1374,52 +1413,70 @@
             <div class="need-icon">✨</div>
             <div class="need-content">
               <h4>Animators</h4>
-              <p>Character animations, combat effects, and UI transitions for responsive, satisfying gameplay.</p>
+              <p>Character animations, combat effects, spell VFX, and polished UI transitions.</p>
             </div>
           </div>
 
           <div class="funding-need" style="margin-top: 14px;">
             <div class="need-icon">🔊</div>
             <div class="need-content">
-              <h4>Sound Design</h4>
-              <p>Music, sound effects, and audio atmosphere to enhance immersion and feedback.</p>
+              <h4>Sound Design & Music</h4>
+              <p>Original soundtrack, sound effects, ambient audio, and UI feedback sounds.</p>
             </div>
           </div>
 
           <div class="funding-need" style="margin-top: 14px;">
             <div class="need-icon">🧪</div>
             <div class="need-content">
-              <h4>QA Testing</h4>
-              <p>External testing for stability, balance, and cross-device compatibility.</p>
+              <h4>QA & Testing</h4>
+              <p>Professional testing for bugs, balance, performance, and cross-device compatibility.</p>
             </div>
           </div>
         </div>
 
         <div>
           <div class="funding-summary">
-            <h3>Why This Matters</h3>
+            <h3>Why Fund This Project?</h3>
             <p>
-              The game's systems work. What separates a prototype from a successful launch is professional polish — art, animation, and audio that create emotional connection with players.
+              <strong>✓ Proven dedication:</strong> 12+ months of solo development in spare time shows commitment, not just an idea on paper.
             </p>
             <p>
-              As a solo developer, I can build complex mechanics and backend systems, but bringing in specialists will dramatically accelerate development while ensuring professional quality.
+              <strong>✓ Working prototype:</strong> Core gameplay loop is complete and playable — this isn't a concept, it's a real game that needs polish.
+            </p>
+            <p>
+              <strong>✓ Clear use of funds:</strong> Not vague "development costs" — specific needs: full-time transition + professional specialists.
+            </p>
+            <p>
+              <strong>✓ Realistic scope:</strong> Mobile RPG with proven market demand, built on solid technical foundation (Godot 4.5 + PlayFab).
             </p>
             <p style="margin-bottom: 0;">
-              <strong style="color: var(--accent-warm);">Funding enables completion of guild systems, guild wars, and professional polish for beta launch.</strong>
+              <strong>✓ Fair monetization:</strong> Non-pay-to-win design that's sustainable long-term without exploiting players.
             </p>
           </div>
 
           <div class="card" style="margin-top: 20px;">
-            <h4 style="margin-bottom: 10px; font-size: 15px;">Current Status</h4>
+            <h4 style="margin-bottom: 12px; font-size: 15px;">What I've Already Built (Alone)</h4>
             <ul class="feature-list">
-              <li>Playable mobile build</li>
-              <li>PvE and PvP systems working</li>
-              <li>Equipment progression complete</li>
-              <li>Backend infrastructure ready</li>
-              <li>Foundation for guild systems</li>
+              <li>Complete game architecture & codebase</li>
+              <li>PlayFab backend integration</li>
+              <li>PvE system (hunts, dungeons, expeditions)</li>
+              <li>PvP Arena with ranking system</li>
+              <li>Equipment & progression systems</li>
+              <li>Daily quests, rewards, energy system</li>
+              <li>Citadel building system</li>
+              <li>Chat & social foundations</li>
+              <li>Shop & economy framework</li>
             </ul>
           </div>
         </div>
+      </div>
+
+      <!-- Funding Impact -->
+      <div class="card" style="margin-top: 24px; text-align: center; padding: 28px; border-color: rgba(109, 213, 140, 0.25); background: linear-gradient(135deg, rgba(109, 213, 140, 0.08), transparent);">
+        <h3 style="font-size: 20px; margin-bottom: 12px; color: var(--accent-green);">Expected Outcome</h3>
+        <p style="color: var(--text-muted); font-size: 15px; max-width: 700px; margin: 0 auto;">
+          With 6 months of funded full-time development plus a small team of specialists, Light & Shadow will be ready for <strong>closed beta</strong> with professional-quality visuals, audio, and complete core systems including guilds and guild wars.
+        </p>
       </div>
     </div>
   </section>
